@@ -4,6 +4,12 @@
 
 SKAR Weather App is a dynamic web application that provides real-time weather information for various locations. Built using Node.js, Express, and EJS templating, the app fetches weather data from a third-party API and presents it in an intuitive, visually appealing interface.
 
+## Application Deployment
+
+This application is deployed and hosted on Render. You can access the live version of the app through the following link:
+
+ [Weather Application](https://weather-application-q2mr.onrender.com)
+
 ## 🌟 Features
 
 - **Real-time Weather Data**: Fetch current weather conditions for any location
