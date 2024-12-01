@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/header.css">
+    <link rel="stylesheet" href="/styles/main.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Protest+Revolution&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Weather App</title>
+</head>
+<body>
+    <nav class="header navbar-expand-lg navbar-dark">
+        <div>
+            <a class="navbar-brand logo" href="#">
+                <img src="/images/logo.png">
+                <p>SKAR</p>
+            </a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <form class="form-inline my-2 my-lg-0" action="/search" method="POST">
+            <input class="form-control mr-sm-2 search-bar" name="search" type="search" placeholder="Enter the country or city name" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+    </nav>
+
+
+    <div class = "main">
+        <div class="today-1">
+            <div class="today-1-head">
+                <div class="today-1-head-text">
+                    <p class="place"><%= data.location.name %> , <%= data.location.country %></p>
+                    <p class="time">As of <%= data.location.localtime %> local time</p>
+                </div>
+            </div>
+
+            <div class="today-1-body">
+                <div class="temp">
+                    <p class="degree"><%= data.current.temp_c %> <sup>o</sup> C</p>
+                    <p class="type"><%= data.current.condition.text %></p>
+                    <p class="weather">wind speed <%= data.current.wind_kph %> kph . Humidity <%= data.current.humidity %></p>
+                </div>
+                <div class="pic">
+                    <img src= <%=data.current.condition.icon%> >
+                </div>
+            </div>
+        </div>
+
+        <div class="today-2">
+            <div class="today-2-head">
+                <p>Today's Forecast for <%= data.location.name %>, <%= data.location.country %></p>
+            </div>
+            <div class="today-2-body">
+                <div class="today-2-content">
+                    <p class="type">Morning</p>
+                    <p class="temp"><%=avg.morning%> <sup>o</sup></p>
+                    <img src= <%= data.forecast.forecastday[0].hour[7].condition.icon%> >
+                </div>
+                <div class="today-2-content">
+                    <p class="type">Afternoon</p>
+                    <p class="temp"><%=avg.afternoon%> <sup>o</sup></p>
+                    <img src= <%= data.forecast.forecastday[0].hour[13].condition.icon%> >
+                </div>
+                <div class="today-2-content">
+                    <p class="type">Evening</p>
+                    <p class="temp"><%=avg.evening%> <sup>o</sup></p>
+                    <img src= <%= data.forecast.forecastday[0].hour[17].condition.icon%> >
+                </div>
+                <div class="today-2-content">
+                    <p class="type">Overnight</p>
+                    <p class="temp"><%=avg.overnight%>  <sup>o</sup></p>
+                    <img src=<%= data.forecast.forecastday[0].hour[19].condition.icon%> >
+                </div>
+            </div>
+        </div>
+
+        <div class="hourly">
+            <button class="left-arrow"><</button>
+            <div class="hourly-container">
+                <p class="t"><%= array[0].time %> <%= array[0].m %></p>
+                <p class="te"><%= array[0].temp %> <sup>o</sup></p>
+                <img src=<%= array[0].icon %> >
+            </div>
+            <div class="hourly-container">
+                <p class="t"><%= array[1].time %> <%= array[1].m %></p>
+                <p class="te"><%= array[1].temp %> <sup>o</sup></p>
+                <img src=<%= array[1].icon %> >
+            </div>
+            <div class="hourly-container">
+                <p class="t"><%= array[2].time %> <%= array[2].m %></p>
+                <p class="te"><%= array[2].temp %> <sup>o</sup></p>
+                <img src=<%= array[2].icon %> >
+            </div>
+            <div class="hourly-container">
+                <p class="t"><%= array[3].time %> <%= array[3].m %></p>
+                <p class="te"><%= array[3].temp %> <sup>o</sup></p>
+                <img src=<%= array[3].icon %> >
+            </div>
+            <div class="hourly-container">
+                <p class="t"><%= array[4].time %> <%= array[4].m %></p>
+                <p class="te"><%= array[4].temp %> <sup>o</sup></p>
+                <img src=<%= array[4].icon %> >
+            </div>
+            <div class="hourly-container">
+                <p class="t"><%= array[5].time %> <%= array[5].m %></p>
+                <p class="te"><%= array[5].temp %> <sup>o</sup></p>
+                <img src=<%= array[5].icon %> >
+            </div>
+            <button class="right-arrow">></button>
+        </div>  
+        
+        <div class="astro">
+            <div class="first-row">
+                <div class="sunrise">
+                    <img class="sun-moon-pic" src="/images/sunrise.png">
+                    <p class="start">Sunrise time: <%= data.forecast.forecastday[0].astro.sunrise %></p>
+                    <p class="end">Sunset time: <%= data.forecast.forecastday[0].astro.sunset %></p>
+                </div>
+                <div class="moonrise">
+                    <img class="sun-moon-pic" src="/images/moon.png">
+                    <p class="start">Moonrise time: <%= data.forecast.forecastday[0].astro.moonrise %></p>
+                    <p class="end">Moonset time: <%= data.forecast.forecastday[0].astro.moonset %></p>
+                </div>
+            </div>
+
+            <div class="second-row">
+                <p class="m-temp">Max Temp: <%= data.forecast.forecastday[0].day.maxtemp_c %></p>
+                <p class="m-temp">Min Temp: <%= data.forecast.forecastday[0].day.mintemp_c %></p>
+                <p class="moon-phase">Moon Phase: <%= data.forecast.forecastday[0].astro.moon_phase %></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="/script.js"></script>
+    <script>
+        window.hourlyData = <%- JSON.stringify(mainarray) %>;
+        let localTime = new Date('<%= data.location.localtime %>');
+        let backgroundImage = '<%= background %>';
+    
+        if(localTime.getHours() >= 7 && localTime.getHours() <= 15 && backgroundImage === 'night'){
+            document.body.style.setProperty('--background-image', `url('/images/sunny.jpg')`);
+        } else {
+            document.body.style.setProperty('--background-image', `url('/images/${backgroundImage}.jpg')`);
+        }
+        if(backgroundImage   == "rainy" || backgroundImage   == "night"){
+            document.querySelectorAll(".today-1-body p").forEach(e => {
+                e.style.color = "white";
+            });
+            document.querySelector(".today-1-head-text .place").style.color = "yellow";
+            document.querySelector(".today-1-head-text .time").style.color = "rgb(0, 238, 255)";
+        }
+    </script>
+</body>
+</html>

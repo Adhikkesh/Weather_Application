@@ -1,0 +1,87 @@
+body {
+    margin: 0;
+    height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+    height: 2000px;
+}
+  
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: var(--background-image);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: blur(8px);
+    z-index: -1;
+  }
+  
+  .header {
+    height: 80px;
+    position: fixed !important;
+    width: 100%;
+    margin-top: 5px;
+    top: 0;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid;
+    border-radius: 100px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+  }
+  
+  .collapse{
+    margin-left: 500px;
+  }
+  .logo {
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo p {
+    color: rgb(0, 238, 255);
+    font-family: 'Protest Revolution';
+    font-size: 25px;
+    display: inline;
+    margin-left: 10px;
+  }
+  
+  .logo img {
+    height: 35px;
+    width: 35px;
+  }
+  
+  .nav-link.text-color:hover {
+    color: orange !important;
+  }
+  
+  .search-bar {
+    width: 300px;
+    height: 40px;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+  }
+  
+  .search-bar:hover {
+    border: 3px solid blue;
+  }
+  
+  .search-bar:focus {
+    border: 3px solid #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }

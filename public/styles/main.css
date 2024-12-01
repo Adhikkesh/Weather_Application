@@ -1,0 +1,282 @@
+.main{
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.today-1{
+    height: 300px;
+    width: 700px;
+    border: 1px solid;
+    margin-top: 50px;
+    background-image: var(--background-image);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50px;
+}
+
+.today-1-head{
+    background-color: rgba(255, 226, 3, 0.3);
+    backdrop-filter: blur(10px);
+    height: 70px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    display: flex;
+    align-items: center;
+}  
+
+.today-1-head p{
+    display: inline;
+}
+
+.today-1-head-text{
+    margin-left: 20px;
+}
+
+.today-1-head-text .place{
+    font-weight: bold;
+    font-size: 25px;
+    color: rgb(255, 0, 0);
+}
+
+.today-1-head-text .time{
+    color: rgb(179, 3, 198);
+    font-size: 20px;
+}
+
+
+.today-1-body{
+    margin-left: 20px;
+    margin-right: 35px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.today-1-body .temp .degree{
+    font-size: 70px;
+    font-weight: bold;
+    margin: 0px;
+}
+
+.today-1-body .temp .type{
+    font-size: 30px;
+    font-weight: bold;
+    margin: 0px;
+}
+
+.today-1-body .temp .weather{
+    font-size: 30px;
+    font-weight: bold;
+    margin: 0px;
+}
+
+.today-1-body .pic img{
+    width: 125px;
+    height: 125px;
+}
+
+.today-2{
+    height: 400px;
+    width: 700px;
+    border: 1px solid red;
+    margin-top: 100px;
+    border-radius: 50px;
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+}
+
+.today-2-head{
+    margin-left: 30px;
+    margin-top: 20px;
+} 
+
+.today-2-head p{
+    font-weight: bold;
+    font-size: 25px;
+    display: inline;
+    color: #c0c0c0;
+}
+
+.today-2-body{
+    margin-top: 20px;
+    margin-left: 15px;
+    margin-right: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.today-2-content {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    height: 60px; /* Ensure consistent height for rows */
+}
+
+.today-2-content p {
+    display: inline-block;
+    margin: 0;
+    line-height: 1; 
+    font-size: 25px;
+    color: #d3d3d3;
+/* Avoid extra spacing */
+}
+
+.today-2-content .temp {
+    font-size: 25px;
+    text-align: center;
+    min-width: 50px;
+    color: #a0d8ef;
+ /* Ensure space for alignment */
+}
+
+.today-2-content img {
+    width: 50px;
+    height: 50px;
+}
+
+.hourly{
+    height: 200px;
+    width: 700px;
+    border: 1px solid;
+    border-radius: 50px;
+    margin-top: 100px;
+    display: flex;
+    background: linear-gradient(120deg, #84fab0, #8fd3f4);
+
+
+}
+
+.left-arrow{
+    height: 200px;
+    width: 50px;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    font-size: 25px;
+    background: #ff6f61;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.hourly-container{
+    height: 200px;
+    width: 100px;
+    border: 1px solid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.right-arrow{
+    height: 200px;
+    width: 50px;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    font-size: 25px;
+    background: #ff6f61;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.hourly-container .t{
+    margin: 0px;
+    font-size: 25px;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.hourly-container img{
+    width: 60px;
+    height: 60px;
+    margin-bottom: 15px;
+    
+}
+
+.hourly-container .te{
+    margin: 0px;
+    font-size: 25px;
+    font-weight: bold;
+    color: #cf0d17;
+}
+
+.astro{
+    margin-top: 100px;
+    height: 300px;
+    width: 700px;
+    border: 1px solid;
+    border-radius: 50px;
+    background: linear-gradient(to right, #009245, #fcee21);
+    display: flex;
+    flex-direction: column;
+}
+
+.first-row{
+    height: 200px;
+    width: 700px;
+    border-bottom: 1px solid;
+    display: flex;
+}
+
+.sunrise{
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.moonrise{
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.sun-moon-pic{
+    height: 80px;
+    width: 80px;
+}
+
+.start{
+    margin: 0px;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.end{
+    margin: 0px;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.second-row{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 10px;
+    margin-right: 10px;
+    align-items: center;
+}
+
+.m-temp{
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+.moon-phase{
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
