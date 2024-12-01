@@ -128,4 +128,4 @@ Current Version: 1.0.0
 
 Your Name - adhikkesh@example.com
 
-Project Link: [https://github.com/adhikkesh/Weather-Application](https://github.com/adhikkesh/Weather-Application)
+Project Link: [https://github.com/Adhikkesh/Weather_Application](https://github.com/Adhikkesh/Weather_Application)
