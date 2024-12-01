@@ -8,6 +8,8 @@ const app = express();
 const port = 3000;
 const API_URL = process.env.API_URL;
 const key = process.env.API_KEY;
+console.log("API_URL:", process.env.API_URL);
+console.log("API_KEY:", process.env.API_KEY);
 
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended: true}));
